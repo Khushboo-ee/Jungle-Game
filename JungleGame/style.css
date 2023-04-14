@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: red;
+    overflow: hidden;
+
+}
+.gameContainer{
+ background-image: url(bg2.webp);
+ background-repeat: no-repeat;
+ background-size: 100vw 100vh;
+ width: 100vw;
+ height: 100vh;
+}
+
+
+
+.myPlayer{
+    background-image: url(myPlayer-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute; /*by setting this property, this container will position itself relative to the position of its set parent container*/
+    /* width: 10vw;
+    height: 44vh;
+    bottom: 21vh;
+    left: 11vw; */
+
+    width: 125px;
+    height: 122px;
+    bottom: 90px;
+    left: 183px;
+}
+
+.obstacle{
+    background-image: url(dino-removebg-preview.png);
+    background-size: cover;
+    width: 384px;
+    height: 194px;
+    position: absolute;
+    bottom: 67px;
+    left: 807px;
+    
+}
+
+  
+  .gameOver{
+    position: relative;
+    font-family: 'VT323', ;
+    font-size:8em;
+    animation: example 3s infinite;
+    top: 35px;
+    font-size: 53px;
+    color: #880808;
+    font-style: italic;
+    font-family: sans-serif;
+    text-align: center;
+    /* visibility: hidden; */
+    
+}
+
+  
+  @keyframes example {
+    0%{color:#880808; text-shadow:0 0 20px red}
+    25%{color:#D22B2B; text-shadow:2px 2px 2px #880808; transform: translate(-2px,1px)}
+    40%{color:#880808; text-shadow:none; transform: translate(0,0)}
+    50%{color:#D22B2B; text-shadow:5px 5px 2px #811331, -5px -5px 2px red; transform: translate(0px,5px)}
+    70%{color:#880808; text-shadow:none; transform: translate(0,0)}
+    80%{color:#880808; text-shadow:0 0 20px #D22B2B; transform: translate(-2px,1px)}
+    100%{color:#880808; text-shadow:none;}
+  }
+
+/*adding animation to myPlayer*/
+.animatePlayer{
+animation: myPlayer 0.6s linear;
+}
+/*adding animation functionality*/
+@keyframes myPlayer {
+    /*when animation complets 0% perform this defined function*/
+    0%{
+        bottom: 100px;
+       
+    }
+     /*when animation complets 50% perform this defined function*/
+     50%{
+        bottom: 450px;
+       
+     }
+      /*when animation complets 100% perform this defined function*/
+      100%{
+        bottom: 100px;
+       
+      }
+}
+
+#scoreContainer{
+    position: absolute;
+    left: 1076px;
+    right: 91px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #ADFF2F;
+    padding: 10px;
+    font-family: sans-serif;
+    width: 150px;
+    top: 12px;
+}
+
+.obstacleDino{
+    animation: obstacleDino 5s linear infinite;
+}
+
+@keyframes obstacleDino {
+    0%{
+        left: 100vw;
+
+    }
+    100%{
+        left: -10vw;
+    }
+    
+}
